@@ -1,0 +1,11 @@
+$color-sass: hsl(330, 50%, 50%);
+$color-sass-80: hsla(330, 50%, 50%, 0.8);
+
+.bg-sass {
+  background-color: $color-sass;
+  transition: background-color 0.5s ease-in-out;
+
+  &:hover {
+    background-color: $color-sass-80;
+  }
+}
