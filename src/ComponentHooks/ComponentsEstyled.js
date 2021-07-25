@@ -81,6 +81,7 @@ export default function ComponentStyled() {
     border-radius: 1rem;
   `;
 
+  //? COMPONENT de estilos Globales, crear el componente y en ese archivo se inyectan todos los estilos que tiene
   const GlobalStyle = createGlobalStyle`
       h2{
         padding: 2rem;

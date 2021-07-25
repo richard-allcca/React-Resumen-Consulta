@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 export default class EventosES7 extends Component {
   // ===============================
-  //? state com propiedad de la clase
+  //? state como propiedad sin el constructor
   // ===============================
   state = {
     contador: 0
   };
 
   // ===============================
-  //? eventos con Arrows functions
+  //? Arrows functions para evitar el bindeo
   // ===============================
   sumar = (e) => {
     console.log('sumando')

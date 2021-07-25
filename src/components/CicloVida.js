@@ -22,7 +22,8 @@ class Reloj extends Component {
     )
   }
 }
-//? alternativa a componente de clase (componente de funtion)
+// ===============================
+//? alternativa a componente reloj de clase 
 // function Reloj(props) {
 //   return (
 //     <div>
@@ -30,6 +31,7 @@ class Reloj extends Component {
 //     </div>
 //   )
 // }
+// ===============================
 export default class ClicoVida extends Component {
   constructor(props) {
     super(props);

@@ -23,7 +23,7 @@ export default function Referencias(props) {
   // ===============================
   //? Metodo Recomendado 
   // ===============================
-  // crea la referencia y asignala a un elemento del DOM
+  // usa la referencia y asignala a un elemento del DOM
   const refMenu = useRef();
   const refMenuBtn = useRef();
 
@@ -42,13 +42,13 @@ export default function Referencias(props) {
       <h2>Referencias</h2>
       <button ref={refMenuBtn} id="btn-button" onClick={handleToggleMenu}>Menú</button>
       <nav ref={refMenu} id="menu" style={{ display: "none" }}>
-        <a href="#">section1</a>
+        <a href="index.html">section1</a>
         <br />
-        <a href="#">section2</a>
+        <a href="index.html">section2</a>
         <br />
-        <a href="#">section3</a>
+        <a href="index.html">section3</a>
         <br />
-        <a href="#">section4</a>
+        <a href="index.html">section4</a>
       </nav>
     </>
   )

@@ -1,5 +1,5 @@
 // ===============================
-//! otra froma de manejar el error con throw ln 17
+//! otra froma de manejar el error con throw ln 27
 // ===============================
 // throw new Error ({
 //   err: true,
@@ -12,7 +12,7 @@
 //? no importamos "React" solo useState y useEffect
 // ===============================
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
@@ -20,13 +20,14 @@ export const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-
-    const getData = async (url) => {// define la funcion fetch
+    const getData = async (url) => {
+      // define la funcion fetch
       try {
         let res = await fetch(url);
 
         if (!res.ok) {
-          const errorThrow = { // creamos un obj para throw 
+          const errorThrow = {
+            // creamos un obj para throw
             err: true,
             status: res.status,
             statusText: !res.statusText ? "Ocurrio un error" : res.statusText,
@@ -39,17 +40,14 @@ export const useFetch = (url) => {
         setIsPending(false);
         setData(data);
         setError({ err: false });
-
       } catch (err) {
-
         setIsPending(false);
         setError(err);
-      };
+      }
     };
 
-    getData(url); // ejecutara la petición 
+    getData(url); // ejecutara la petición
+  }, [url]); //? se ejecutara cuando cambie la url que viene como parametro
 
-  }, [url])//? se ejecutara cuando cambie la url que viene como parametro
-
-  return { data, isPending, error } //puede retornar cualquier cosa aqui usamon un obj
-}
+  return { data, isPending, error }; //puede retornar cualquier cosa aqui usamon un obj
+};
