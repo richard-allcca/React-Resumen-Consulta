@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function ScrollHooks(props) {
   const [scrollY, setScrollY] = useState(0);
@@ -15,8 +15,8 @@ export default function ScrollHooks(props) {
 
     return () => {
       window.removeEventListener("scroll", detectarScroll);
-    }
-  }, [scrollY])// indica que este efecto solo se hara cuando este parametro tenga cambios
+    };
+  }, [scrollY]); // indica que este efecto solo se hara cuando este parametro tenga cambios
 
   // ===============================
   //? Montaje
@@ -32,7 +32,7 @@ export default function ScrollHooks(props) {
   //? si no tiene el segundo parametro definido se ejecutara en cada cambio no es RECOMENDABLE usarlo asi
   useEffect(() => {
     // console.log('Face de Actualización')
-  })
+  });
 
   // ===============================
   //? Desmontaje
@@ -40,13 +40,13 @@ export default function ScrollHooks(props) {
   useEffect(() => {
     return () => {
       // console.log('Face de Desmontaje')
-    }
-  })
+    };
+  });
 
   return (
-    <>
+    <div>
       <h2>Hooks - useEffect y el ciclo de vida</h2>
       <p>Scroll Y del Navegador {scrollY}px</p>
-    </>
-  )
+    </div>
+  );
 }

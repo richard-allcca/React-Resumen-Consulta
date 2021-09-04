@@ -1,5 +1,5 @@
 // ===============================
-//! otra froma de manejar el error con throw ln 27
+//! otra froma de manejar el error con throw ln 29
 // ===============================
 // throw new Error ({
 //   err: true,

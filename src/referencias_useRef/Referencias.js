@@ -2,7 +2,7 @@
 //? REFERENCIAS - con clases
 //? https://es.reactjs.org/docs/refs-and-the-dom.html
 
-https: import React, { useRef } from "react";
+import React, { useRef } from "react";
 
 export default function Referencias(props) {
   // usa la referencia y asignala a un elemento del DOM
@@ -27,7 +27,11 @@ export default function Referencias(props) {
         <li>Asigna una referencia a una "const" usando "useRef"</li>
         <li>La referencia creada asignala a un elemento del DOM</li>
       </ul>
-      <button ref={refMenuBtn} onClick={handleToggleMenu}>
+      <button
+        style={{ padding: ".5rem .7rem", borderRadius: "10px" }}
+        ref={refMenuBtn}
+        onClick={handleToggleMenu}
+      >
         Menú
       </button>
       <nav ref={refMenu} style={{ display: "none" }}>

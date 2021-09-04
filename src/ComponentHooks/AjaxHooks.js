@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Pokemon({ avatar, name }) {
   return (
@@ -6,14 +6,14 @@ function Pokemon({ avatar, name }) {
       <img src={avatar} alt={name} />
       <figcaption>{name}</figcaption>
     </figure>
-  )
+  );
 }
 
 // ===============================
 //? Fetch ASYNC
 // ===============================
-export default function AjaxHooks(props) {
-  const [pokemons, setPokemons] = useState([])
+export default function AjaxHooks() {
+  const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     const getPokemons = async (url) => {
@@ -27,17 +27,17 @@ export default function AjaxHooks(props) {
         let pokemon = {
           id: json.id,
           name: json.name,
-          avatar: json.sprites.front_default
+          avatar: json.sprites.front_default,
         };
-        setPokemons((pokemons) => [...pokemons, pokemon])
+        setPokemons((pokemons) => [...pokemons, pokemon]);
       });
-    }
+    };
 
     getPokemons("https://pokeapi.co/api/v2/pokemon/");
-  }, [])
+  }, []);
 
   // ===============================
-  //? Fetch NORMAL
+  //? Fetch NORMAL en clase
   // ===============================
   // useEffect(() => {
   //   let url = "https://pokeapi.co/api/v2/pokemon/";
@@ -61,13 +61,15 @@ export default function AjaxHooks(props) {
   // }, [])
 
   return (
-    <>
+    <div>
       <h2>Petición Async Ajax con Hooks</h2>
-      {pokemons.length === 0 ? (<h3>Cargando...</h3>) :
-        (pokemons.map((el) => (
+      {pokemons.length === 0 ? (
+        <h3>Cargando...</h3>
+      ) : (
+        pokemons.map((el) => (
           <Pokemon key={el.id} name={el.name} avatar={el.avatar} />
         ))
-        )}
-    </>
-  )
+      )}
+    </div>
+  );
 }

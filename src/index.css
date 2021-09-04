@@ -17,3 +17,10 @@ code {
 a {
   color: aliceblue;
 }
+.App h2 {
+  background-color: hsl(220, 13%, 18%);
+}
+section {
+  /* border: 1px solid white; */
+  width: 100vw;
+}
